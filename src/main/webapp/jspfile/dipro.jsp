@@ -20,7 +20,7 @@
 	User Name:
 	<%=username%></p>
 <p>
-	Role:
+	Role: 
 	<%=role%></p>
 	
 <!-- when i use encytpe , changes the value to null otherwise working fine. -->
