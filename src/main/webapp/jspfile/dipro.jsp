@@ -17,7 +17,7 @@
 <h1 style="text-align: center;">District News Portal</h1>
 
 <p>
-	User Name:
+	User Name: 
 	<%=username%></p>
 <p>
 	Role:
