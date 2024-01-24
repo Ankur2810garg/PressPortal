@@ -4,14 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login Page</title>
-<link href="../css/bootstrap.min.css" rel="stylesheet"
-	type="text/css" />
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <script src="../js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
 	<h1 style="text-align: center;">District News Portal</h1>
-	<form action="valid.jsp" method="post">
+	<form action="../javafiles/myfilter" method="post">
 
 		<div class="mb-3 row">
 			<label for="username" class="col-sm-2 col-form-label">User

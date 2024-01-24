@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
-  <display-name>PressPortal</display-name>
+  <display-name>Haryana News</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>jspfile/index.jsp</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <absolute-ordering/>
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+  <filter>
+    <filter-name>filter1</filter-name>
+    <filter-class>javafiles.myfilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>filter1</filter-name>
+    <url-pattern>/javafiles/myfilter</url-pattern>
+    <url-pattern>/jspfile/dipro.jsp</url-pattern>
+    <url-pattern>/jspfile/officers.jsp</url-pattern>
+    <url-pattern>/jspfile/diproreport.jsp</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HttpServlet</display-name>
+    <servlet-name>HttpServlet</servlet-name>
+    <servlet-class>javax.servlet.http.HttpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HttpServlet</servlet-name>
+    <url-pattern>/HttpServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -51,7 +51,7 @@
            		fos.close();
     %>
 	<tr>
-		<td><a href="www.google.com" target="_blank"><%= rs.getString("id")%></a></td>
+		<td><%= rs.getString("id")%></td>
 		<td><%= rs.getString("newsdate")%></td>
 		<td><%= rs.getString("filename")%></td>
 		<%-- <td><%= rs.getString("filedata")%></td> --%>
