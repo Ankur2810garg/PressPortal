@@ -24,8 +24,8 @@
 
 	<%
 	String filename = request.getParameter("message");
+	filename= "C:/Users/Ankur/OneDrive/Desktop/"+filename;
 System.out.println("filename" + filename);
-/* "C:/Users/Ankur/OneDrive/Desktop/"+ */
 	FileInputStream fis = new FileInputStream(filename);
 
 	Calendar calendar = Calendar.getInstance();
