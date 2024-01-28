@@ -23,6 +23,9 @@ public class Fileupload extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		Dao up = new Dao();
+		up.db_connection();
+		
 		HttpSession session = request.getSession();
 		String newsresource = (String) session.getAttribute("newsresource");
 		String comment = (String) session.getAttribute("comment");

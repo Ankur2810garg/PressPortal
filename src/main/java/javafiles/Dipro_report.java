@@ -21,7 +21,7 @@ public class Dipro_report extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		userpage up = new userpage();
+		Dao up = new Dao();
 		up.db_connection();
 		
 		HttpSession session= request.getSession();
