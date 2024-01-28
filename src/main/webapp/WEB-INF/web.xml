@@ -20,4 +20,54 @@
     <url-pattern>/jspfile/diproreport.jsp</url-pattern>
   </filter-mapping>
   
+  <servlet>
+    <description></description>
+    <display-name>Dipro_code</display-name>
+    <servlet-name>Dipro_code</servlet-name>
+    <servlet-class>javafiles.Dipro_code</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Dipro_code</servlet-name>
+    <url-pattern>/Dipro_code</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Dipro</display-name>
+    <servlet-name>Dipro</servlet-name>
+    <servlet-class>javafiles.Dipro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Dipro</servlet-name>
+    <url-pattern>/Dipro</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Dipro_report</display-name>
+    <servlet-name>Dipro_report</servlet-name>
+    <servlet-class>javafiles.Dipro_report</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Dipro_report</servlet-name>
+    <url-pattern>/Dipro_report</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>userpage</display-name>
+    <servlet-name>userpage</servlet-name>
+    <servlet-class>javafiles.userpage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userpage</servlet-name>
+    <url-pattern>/userpage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Fileupload</display-name>
+    <servlet-name>Fileupload</servlet-name>
+    <servlet-class>javafiles.Fileupload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Fileupload</servlet-name>
+    <url-pattern>/Fileupload</url-pattern>
+  </servlet-mapping>
 </web-app>
