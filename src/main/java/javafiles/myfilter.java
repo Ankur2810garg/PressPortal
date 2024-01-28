@@ -30,7 +30,7 @@ public class myfilter implements Filter {
 
 		HttpServletResponse res = (HttpServletResponse) arg1;
 
-		HttpSession s = req.getSession();
+		HttpSession session = req.getSession();
 
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
@@ -44,13 +44,12 @@ public class myfilter implements Filter {
 			res.getWriter().println("user is not valid");
 			res.sendRedirect("login.jsp");
 		} else {
-			if ((username.equals("dipro") && password.equals("dipro") && role.equals("DIPRO"))
-				) {
+			if ((username.equals("dipro") && password.equals("dipro") && role.equals("DIPRO"))) {
 
 				System.out.println("before dipro filter");
-				s.setAttribute("Username", username);
-				s.setAttribute("Password", password);
-				s.setAttribute("Role", role);
+				session.setAttribute("Username", username);
+				session.setAttribute("Password", password);
+				session.setAttribute("Role", role);
 				System.out.println("----------------------");
 				System.out.println("filter dipro executing");
 				req.getRequestDispatcher("../jspfile/dipro.jsp").forward(req, res);
@@ -68,13 +67,12 @@ public class myfilter implements Filter {
 						|| (username.equals("dio") && password.equals("dio") && role.equals("DIO"))) {
 
 					System.out.println("before officers filter");
-					s.setAttribute("Username", username);
-					s.setAttribute("Password", password);
-					s.setAttribute("Role", role);
+					session.setAttribute("Username", username);
+					session.setAttribute("Password", password);
+					session.setAttribute("Role", role);
 					System.out.println("----------------------");
 					System.out.println("filter officers executing");
 					req.getRequestDispatcher("../jspfile/officers.jsp").forward(arg0, arg1);
-					//res.flushBuffer();
 					arg2.doFilter(req, res);
 					System.out.println("----------------------");
 					System.out.println("filter officers executed");
@@ -96,6 +94,6 @@ public class myfilter implements Filter {
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		// System.out.println("filter initalized");
+		System.out.println("filter initalized");
 	}
 }

@@ -9,32 +9,32 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class userpage
- */
 public class userpage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public userpage() {
+   public userpage() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
+   
+   public void db_connection()
+   {
+		try
+		{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		    Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/press","root","Hariom@123");
+
+		}
+		catch(Exception e)
+		{
+			System.out.println("DB Connection Failed");
+		}
+
+   }
 
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			try
-			{
-				Class.forName("com.mysql.cj.jdbc.Driver");
-			    Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/press","root","Hariom@123");
-
-			}
-			catch(Exception e)
-			{
-				System.out.println("DB Connection Failed");
-			}
-			
+					
+	db_connection();		
 	}
 
 }

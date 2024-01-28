@@ -6,31 +6,24 @@ import java.io.IOException;
 import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class Dipro_report
- */
 public class Dipro_report extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Dipro_report() {
+   public Dipro_report() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		userpage up = new userpage();
+		up.db_connection();
+		
 		HttpSession session= request.getSession();
 		session.getAttribute("Username");
 		session.getAttribute("Role");
@@ -63,5 +56,4 @@ public class Dipro_report extends HttpServlet {
 		System.out.println(ex);
 		}
 	}
-
 }
