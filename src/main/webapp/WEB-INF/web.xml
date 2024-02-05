@@ -10,14 +10,19 @@
   </session-config>
   <filter>
     <filter-name>filter1</filter-name>
-    <filter-class>javafiles.myfilter</filter-class>
+    <filter-class>javafiles.Myfilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>filter1</filter-name>
-    <url-pattern>/javafiles/myfilter</url-pattern>
+    <url-pattern>/javafiles/Myfilter</url-pattern>
     <url-pattern>/jspfile/dipro.jsp</url-pattern>
     <url-pattern>/jspfile/officers.jsp</url-pattern>
     <url-pattern>/jspfile/diproreport.jsp</url-pattern>
+    <url-pattern>/Dipro_code</url-pattern>
+    <url-pattern>/Dipro</url-pattern>
+    <url-pattern>/Dipro_report</url-pattern>
+    <url-pattern>/dao</url-pattern>
+     <url-pattern>/Fileupload</url-pattern>
   </filter-mapping>
   
   <servlet>
@@ -52,13 +57,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>userpage</display-name>
-    <servlet-name>userpage</servlet-name>
-    <servlet-class>javafiles.userpage</servlet-class>
+    <display-name>dao</display-name>
+    <servlet-name>dao</servlet-name>
+    <servlet-class>javafiles.dao</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>userpage</servlet-name>
-    <url-pattern>/userpage</url-pattern>
+    <servlet-name>dao</servlet-name>
+    <url-pattern>/dao</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

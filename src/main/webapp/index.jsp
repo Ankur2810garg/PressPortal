@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.*, java.io.*, java.sql.*,java.sql.Date "%>
-<%@ include file="jspfile/userpage.jsp"%>
+<%@ include file="jspfile/dao.jsp"%>
 
 <html>
 <body>

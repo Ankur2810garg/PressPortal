@@ -10,7 +10,7 @@
 
 <body>
 	<h1 style="text-align: center;">District News Portal</h1>
-	<form action="../javafiles/myfilter" method="post">
+	<form action="../javafiles/Myfilter" method="post">
 
 		<div class="mb-3 row">
 			<label for="username" class="col-sm-2 col-form-label">User

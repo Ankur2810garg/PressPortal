@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-public class myfilter implements Filter {
+public class Myfilter implements Filter {
 
 	@Override
 	public void destroy() {
