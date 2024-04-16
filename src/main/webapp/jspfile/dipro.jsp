@@ -42,7 +42,7 @@
 		</div>
 
 		<div class="form-group">
-			<label for="comment">Remarks</label>
+			<label for="comment">DIPRO Remarks</label>
 			<textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
 		</div>
 

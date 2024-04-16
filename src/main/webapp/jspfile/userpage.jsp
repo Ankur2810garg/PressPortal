@@ -4,6 +4,6 @@
 <%
 	
     Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/press","root","Hariom@123");
+    Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/press","root","Hariom@123");
     
 %>

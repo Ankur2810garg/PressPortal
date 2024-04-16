@@ -23,7 +23,7 @@
 		<th>File Name</th>
 		<!-- <th>File Data</th> -->
 		<th>News Paper Name</th>
-		<th>Comment</th>
+		<th>Comments</th>
 	</tr>
 	<%
 		ResultSet rs;
@@ -51,7 +51,7 @@
            		fos.close();
     %>
 	<tr>
-		<td><a href="www.google.com" target="_blank"><%= rs.getString("id")%></a></td>
+		<td><a href="https://www.google.com/" target="_blank"><%= rs.getString("id")%></a></td>
 		<td><%= rs.getString("newsdate")%></td>
 		<td><%= rs.getString("filename")%></td>
 		<%-- <td><%= rs.getString("filedata")%></td> --%>
