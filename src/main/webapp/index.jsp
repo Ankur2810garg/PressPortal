@@ -7,6 +7,6 @@
 <body>
 	<h1 style="text-align: center;">District News Portal</h1>
 	<a href="jspfile/login.jsp">Login</a>
-	<a href="##">Logout</a>
+	<a href="###">Logout</a>
 	</body>
 </html>
