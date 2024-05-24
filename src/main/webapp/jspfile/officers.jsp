@@ -18,7 +18,7 @@
 
 	<table height="500" width="1000" border="1px solid black">
 	<tr>
-		<th>id</th>
+		<th>Id</th>
 		<th>News Date</th>
 		<th>File Name</th>
 		<!-- <th>File Data</th> -->
