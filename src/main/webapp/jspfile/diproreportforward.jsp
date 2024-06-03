@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<title>Officers Page</title>
+<title>Forward Page</title>
 </head>
 <body>
 	<h1 style="text-align: center;">District News Portal</h1>
@@ -15,15 +15,15 @@
 	<p>
 		Role:
 		<%=(String) session.getAttribute("Role")%></p>
-
-	<table height="500" width="1000" border="1px solid black">
+<form action="diproreportforwarddept.jsp" method="post">
+	<table height="150" width="1000" border="1px solid black">
 	<tr>
-		<th>Id</th>
+		<th>id</th>
 		<th>News Date</th>
 		<th>File Name</th>
 		<!-- <th>File Data</th> -->
 		<th>News Paper Name</th>
-		<th>Comments</th>
+		<th>Comment</th>
 	</tr>
 	<%
 		ResultSet rs;
@@ -35,10 +35,11 @@
     	String filename;
     	String filedata;
     	String newspaper;
-    	String comment;
+    	String comments;
     	try
 		{
-	    	pstmt=conn.prepareStatement("select * from dipro"); 
+			String newsid="7";
+	    	pstmt=conn.prepareStatement("select * from dipro where id="+newsid); 
        		rs=pstmt.executeQuery();
        		while(rs.next())
        		{
@@ -51,12 +52,12 @@
            		fos.close();
     %>
 	<tr>
-		<td id="%= rs.getString("id")%"><a href= "../jspfile/diproreportforward.jsp" target=”_blank”><%= rs.getString("id")%></a></td>
+		<td><%= rs.getString("id")%></td>
 		<td><%= rs.getString("newsdate")%></td>
 		<td><%= rs.getString("filename")%></td>
 		<%-- <td><%= rs.getString("filedata")%></td> --%>
 		<td><%= rs.getString("newspaper")%></td>
-		<td><%= rs.getString("remarks")%></td>
+		<td><input type="text"></td>
 	</tr>
 	<%
 	} 
@@ -67,15 +68,18 @@
 		catch (Exception ex) {
 		System.out.println(ex);
 		}
-
-List<String> results = new ArrayList<String>();
-File[] files = new File("E:/wipro test/").listFiles();
-
-for (File file : files) {
-    if (file.isFile()) {
-        results.add(file.getName());
-    }
-}
 %>
+<tr>
+<td>Forward to Department Name</td>
+<select name="departname">
+	<option selected>Open this select menu</option>
+	<option value="Animal Husbandry">Animal Husbandry</option>
+	<option value="Food and Supply Department">Food and Supply Department</option>
+</select>
+</tr>
+<br>
+<input type="Submit">
+</form>
 </body>
+
 </html>
