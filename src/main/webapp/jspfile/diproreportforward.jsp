@@ -15,7 +15,7 @@
 	<p>
 		Role:
 		<%=(String) session.getAttribute("Role")%></p>
-<form action="diproreportforwarddept.jsp" method="post">
+<form action="../jspfile/diproreportforwarddept.jsp" method="post">
 	<table height="150" width="1000" border="1px solid black">
 	<tr>
 		<th>id</th>
@@ -38,7 +38,7 @@
     	String comments;
     	try
 		{
-			String newsid="7";
+			String newsid="9";
 	    	pstmt=conn.prepareStatement("select * from dipro where id="+newsid); 
        		rs=pstmt.executeQuery();
        		while(rs.next())
@@ -52,12 +52,12 @@
            		fos.close();
     %>
 	<tr>
-		<td><%= rs.getString("id")%></td>
-		<td><%= rs.getString("newsdate")%></td>
-		<td><%= rs.getString("filename")%></td>
+		<td><input type="text" name="id" hidden value="<%=rs.getString("id")%>"><%=rs.getString("id")%></td>
+		<td><input type="text" name="newsdate" hidden value="<%= rs.getString("newsdate")%>"><%= rs.getString("newsdate")%></td>
+		<td><input type="text" name="filename" hidden value="<%= rs.getString("filename")%>"><%= rs.getString("filename")%></td>
 		<%-- <td><%= rs.getString("filedata")%></td> --%>
-		<td><%= rs.getString("newspaper")%></td>
-		<td><input type="text"></td>
+		<td><input type="text" name="newspaper" hidden value="<%= rs.getString("newspaper")%>"><%= rs.getString("newspaper")%></td>
+		<td><input type="text" name="comment"></td>
 	</tr>
 	<%
 	} 

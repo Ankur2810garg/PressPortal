@@ -3,12 +3,30 @@
 <%@ page import="java.util.*, java.io.*, java.sql.*,java.sql.Date "%>
 <%@ include file="userpage.jsp"%>
 
+<!DOCTYPE html>
 <html>
-<head>
-<title>Officers Page</title>
-</head>
-<body>
-	<h1 style="text-align: center;">District News Portal</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <style>
+    .text-overlay {
+      position: absolute;
+      top: 70vh;
+      left: 50vw;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      color: white;
+    }
+    </style>
+  </head>
+
+  <body>
+      <img class="img-fluid"
+          src="https://images.unsplash.com/photo-1709098951208-f758e4718d97?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+      <div class="text-overlay">
+       	<h1 style="text-align: center;">District News Portal</h1>
 	<p>
 		User Name:
 		<%=(String) session.getAttribute("Username")%></p>
@@ -16,16 +34,20 @@
 		Role:
 		<%=(String) session.getAttribute("Role")%></p>
 
-	<table height="500" width="1000" border="1px solid black">
-	<tr>
-		<th>id</th>
-		<th>News Date</th>
-		<th>File Name</th>
-		<!-- <th>File Data</th> -->
-		<th>News Paper Name</th>
-		<th>Comment</th>
-	</tr>
-	<%
+<div class="container">
+  <div class="table-responsive">          
+  <table class="table">
+    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">News Date</th>
+                        <th scope="col">File Name</th>
+                        <!--<th scope="col">File Data</th>-->
+                        <th scope="col">News Paper Name</th>
+                        <th scope="col">Comment</th>
+                      </tr>
+                    </thead>
+                    <%
 		ResultSet rs;
 		PreparedStatement pstmt;
 		byte b[];
@@ -50,18 +72,23 @@
            		fos.write(b);
            		fos.close();
     %>
-	<tr>
-		<td><%= rs.getString("id")%></td>
+<tbody>
+      <tr>
+		<td id="%= rs.getString("id")%"><%= rs.getString("id")%></td>
 		<td><%= rs.getString("newsdate")%></td>
 		<td><%= rs.getString("filename")%></td>
 		<%-- <td><%= rs.getString("filedata")%></td> --%>
 		<td><%= rs.getString("newspaper")%></td>
 		<td><%= rs.getString("remarks")%></td>
-	</tr>
+	</tr></tbody>
+  
 	<%
 	} 
 	%>
 	</table>
+	</div>
+              </div>
+            
 	<%
 	}
 		catch (Exception ex) {
@@ -77,5 +104,6 @@ for (File file : files) {
     }
 }
 %>
-</body>
+      </div>
+  </body>
 </html>

@@ -45,7 +45,7 @@ public class myfilter implements Filter {
 			res.getWriter().println("user is not valid");
 			res.sendRedirect("login.jsp");
 		} else {
-			if ((username.equals("dipro") && password.equals("dipro") && role.equals("DIPRO"))
+			if ((username.equalsIgnoreCase("dipro") && password.equalsIgnoreCase("dipro") && role.equals("DIPRO"))
 				) {
 
 				System.out.println("before dipro filter");
@@ -84,12 +84,12 @@ public class myfilter implements Filter {
 				} else {
 					res.setContentType("text/html");
 					res.getWriter().println("user is not valid");
-					res.sendRedirect("login.jsp");
+					res.sendRedirect("jspfile/login.jsp");
 				}
 
 				res.setContentType("text/html");
 				res.getWriter().println("user is not valid");
-				res.sendRedirect("login.jsp");
+				res.sendRedirect("jspfile/login.jsp");
 			}
 		}
 		System.out.println("after filter");
