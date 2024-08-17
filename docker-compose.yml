@@ -1,0 +1,10 @@
+version: '3'
+services:
+ PressPortal:
+  image: pressportal
+  ports:
+   - "7085:80"
+ PressPortal_1:
+  image: pressportal
+  ports:
+   - "8085:80"
